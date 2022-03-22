@@ -6,30 +6,31 @@ const canMakeArithmeticProgression = (arr: number[]): boolean => {
     n = arr.length;
   const numberExistMappings: Record<string, boolean> = {};
 
-  for (const num of arr) {
-    if(num < min){
-      min = num
+  for (let i = 0; i < n; i++) {
+    const num = arr[i];
+    if (num < min) {
+      min = num;
     }
 
-    if(num > max){
-      max = num
+    if (num > max) {
+      max = num;
     }
     numberExistMappings[num] = true;
   }
 
   let totalDiff = max - min;
 
-  if(totalDiff % (n - 1) != 0){
+  if (totalDiff % (n - 1) != 0) {
     return false;
   }
   let diff = Math.floor(totalDiff / (n - 1));
 
-  while(min > max){
+  while (min < max) {
     min += diff;
 
     let isExist = numberExistMappings[min];
 
-    if(!isExist) return false
+    if (!isExist) return false;
   }
 
   return true;
