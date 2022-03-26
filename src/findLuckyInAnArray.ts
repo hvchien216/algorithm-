@@ -1,4 +1,4 @@
-//https://leetcode.com/problems/count-largest-group/
+//https://leetcode.com/problems/find-lucky-integer-in-an-array
 
 function findLucky(arr: number[]): number {
   //ý tưởng:
